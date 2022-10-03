@@ -5,6 +5,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import commons.AnimalRemote;
+import commons.CabinetRemote;
 
 
 public class Client 
@@ -18,6 +19,9 @@ public class Client
 			{
 				Registry registry = LocateRegistry.getRegistry(host);
 				AnimalRemote stub = (AnimalRemote) registry.lookup("Felix");
+				CabinetRemote stub_cabinet = (CabinetRemote) registry.lookup("Cabinet");
+				
+				
 				System.out.println("Object 'Felix' on server : ");
 				String response = stub.to_String();
 				System.out.println(response);
@@ -36,6 +40,9 @@ public class Client
 				System.out.print(stub.getAnimal_name()+" a pour espèce : ");
 				System.out.println(stub.getInfo_espece().getSpecies_name());
 				System.out.println("Espérance de vie "+stub.getInfo_espece().getAverage_lifespan());
+				
+				//Cabinet testing
+				System.out.print(stub_cabinet.to_String());
 				
 			} 
 		catch (RemoteException | NotBoundException e) 

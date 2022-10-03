@@ -26,17 +26,19 @@ public class Cabinet extends UnicastRemoteObject implements CabinetRemote
 		liste_de_patients.add(toAdd);
 	}
 	
-	public void to_String()
+	public String to_String()
 	{
-		System.out.println("Descripteur du cabinet "+this.cabinet_name+", ID ["+this.cabinet_id+"]");
-		for (int i=0; i>liste_de_patients.size(); i++)
+		String result="";
+		result = result+"Descripteur du cabinet "+this.cabinet_name+", ID ["+this.cabinet_id+"]\n";
+		for (int i=0; i<liste_de_patients.size(); i++)
 		{
 			try {
-				System.out.println(liste_de_patients.get(i).to_String());
+				result = result+"          "+i+" - "+liste_de_patients.get(i).to_String()+"\n";
 			} catch (RemoteException e) {
 				//Do nothing lol
 			}
 		}
+		return result;
 	}
 	
 }

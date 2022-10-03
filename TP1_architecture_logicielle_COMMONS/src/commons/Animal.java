@@ -1,10 +1,5 @@
-package main;
+package commons;
 import java.rmi.server.UnicastRemoteObject;
-
-import commons.AnimalRemote;
-import commons.DossierSuivi;
-import commons.*;
-
 import java.rmi.RemoteException;
 
 public class Animal extends UnicastRemoteObject implements AnimalRemote {

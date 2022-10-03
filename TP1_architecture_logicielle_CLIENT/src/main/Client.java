@@ -30,9 +30,12 @@ public class Client
 				stub.setDosString("");
 				System.out.println(stub.getDos().getDossier());
 				
+				//Récupération d'une copie de l'attribut de classe espece de l'animal (PAS DE REFERENCE DISTANTE)
+				//La classe n'est pas distribuée car elle n'a pas d'interface remote
 				System.out.println("==Test classe espèce==");
+				System.out.print(stub.getAnimal_name()+" a pour espèce : ");
 				System.out.println(stub.getInfo_espece().getSpecies_name());
-				System.out.println(stub.getInfo_espece().getAverage_lifespan());
+				System.out.println("Espérance de vie "+stub.getInfo_espece().getAverage_lifespan());
 				
 			} 
 		catch (RemoteException | NotBoundException e) 

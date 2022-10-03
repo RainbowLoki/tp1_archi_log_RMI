@@ -21,6 +21,7 @@ public class Serveur
 			//NOTE : les gestionnaires de sécurité sont dépréciés
 			//System.setSecurityManager (new SecurityManager());
 			try {
+				System.setProperty("java.security.policy", "/home/e20220011109/Bureau/ALOD/TP1_archi_logicielle/tp1_archi_log_RMI/TP1_architecture_logicielle_RMI/src/main/serveur.policy");
 				
 					Animal obj = new Animal("Jean", "Félix", "Chat", "DOSSIER TEST 21:34", "Félidé", 15);
 					Cabinet cab_distribue = new Cabinet("Cabinet Dupont de Ligère", "IAD74586#213");

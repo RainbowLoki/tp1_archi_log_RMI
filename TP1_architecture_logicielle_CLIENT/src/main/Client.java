@@ -42,7 +42,10 @@ public class Client
 				System.out.println("Espérance de vie "+stub.getInfo_espece().getAverage_lifespan());
 				
 				//Cabinet testing
+				System.out.println("==Test insertion dans cabinet==");
+				stub_cabinet.addAnimal("Shaggy", "Scoobydoo", "Chien", "RAS", "Chien", 20);
 				System.out.print(stub_cabinet.to_String());
+				
 				
 			} 
 		catch (RemoteException | NotBoundException e) 

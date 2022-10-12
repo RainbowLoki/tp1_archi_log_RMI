@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/home/e20220000319/Documents/Eclipse/ARCHI_LOGICIELLE/TP1/tp1_archi_log_RMI/.metadata/.plugins/org.eclipse.jdt.core
+3103828120.index
+2560368054.index
+3645020272.index
+1865797976.index

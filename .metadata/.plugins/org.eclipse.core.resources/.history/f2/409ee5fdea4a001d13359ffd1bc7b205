@@ -1,0 +1,20 @@
+package codebase_classes;
+
+import java.rmi.RemoteException;
+
+import commons.Animal;
+
+public class Poisson extends Animal 
+{
+
+	public Poisson(String o, String a, String s, String suivi, String espece_nom, int espece_vie, int regime_alimentaire)
+	{
+		super(o, a, s, suivi, espece_nom, espece_vie);
+		if (regime_alimentaire<0)
+	}
+	
+	public String displayRegime()
+	{
+		if regime_alimentaire
+	}
+}

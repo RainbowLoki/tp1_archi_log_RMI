@@ -1,0 +1,21 @@
+package codebase_classes;
+
+import java.rmi.RemoteException;
+
+import commons.Animal;
+import commons.DossierSuivi;
+import commons.espece;
+
+public class Poisson extends Animal 
+{
+
+	public Poisson(Animal(String o, String a, String s, String suivi, String espece_nom, int espece_vie))
+	{
+		owner_name=o;
+		animal_name=a;
+		species=s;
+		dos = new DossierSuivi(suivi);
+		info_espece= new espece(espece_nom, espece_vie);
+	}
+	
+}

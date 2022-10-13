@@ -2,15 +2,15 @@ package commons;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
-public class Animal extends UnicastRemoteObject implements AnimalRemote {
+public class Animal {
 
-	String owner_name;
-	String animal_name;
-	String species;
-	DossierSuivi dos;
-	espece info_espece;
+	protected String owner_name;
+	protected String animal_name;
+	protected String species;
+	protected DossierSuivi dos;
+	protected espece info_espece;
 
-	public Animal(String o, String a, String s, String suivi, String espece_nom, int espece_vie) throws RemoteException
+	public Animal(String o, String a, String s, String suivi, String espece_nom, int espece_vie)
 	{
 		owner_name=o;
 		animal_name=a;

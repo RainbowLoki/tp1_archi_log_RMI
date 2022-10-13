@@ -1,0 +1,39 @@
+package codebase_classes;
+
+import java.rmi.RemoteException;
+
+import commons.Animal;
+
+public class Poisson extends Animal 
+{
+
+	public Poisson(String o, String a, String s, String suivi, String espece_nom, int espece_vie, int regime_alimentaire)
+	{
+		super(o, a, s, suivi, espece_nom, espece_vie);
+		
+		//Si le régime alimentaire est mal assigné, mettre à la valeur défaut 2 = omnivore
+		if (regime_alimentaire<0 || regime_alimentaire>2) regime_alimentaire = 2;
+	}
+	
+	public String displayRegime()
+	{
+		String renvoi="Omnivore";
+		switch(displayRegime){
+		   
+	       case 1: 
+	           System.out.println("Bonjour");
+	           break;
+	   
+	       case 2:
+	           System.out.println("Hello");
+	           break;
+	   
+	       case 3:
+	           System.out.println("Buenos dias");
+	           break;
+	       default:
+	           System.out.println("Choix incorrect");
+	           break;
+	   }
+	}
+}

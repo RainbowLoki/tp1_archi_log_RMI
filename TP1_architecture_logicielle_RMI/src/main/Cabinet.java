@@ -26,15 +26,11 @@ public class Cabinet extends UnicastRemoteObject implements CabinetRemote
 		liste_de_patients.add(toAdd);
 	}
 	
+	//Création de l'animal défini par les paramètres spécifiés dans l'appel, puis ajout au cabinet
 	public void addAnimal(String o, String a, String s, String suivi, String espece_nom, int espece_vie)
 	{
-		try {
 			liste_de_patients.add(new Animal(o, a, s, suivi, espece_nom, espece_vie));
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		
-		//Création de l'animal défini par les paramètres spécifiés dans l'appel, puis ajout au cabinet
+
 	}
 	
 	

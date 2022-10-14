@@ -1,17 +1,10 @@
 package main;
 
-import java.io.Serializable;
-
 import commons.Animal;
 
-public class Poisson extends Animal implements Serializable
+public class Poisson extends Animal 
 {
 	int regime_alimentaire;
-	
-	/*public Poisson() //Default fish constructor
-	{
-		this.animal_name="Poisson test";
-	}*/
 	
 	
 	public Poisson(String o, String a, String s, String suivi, String espece_nom, int espece_vie, int reg)
@@ -21,12 +14,6 @@ public class Poisson extends Animal implements Serializable
 		
 		//Si le régime alimentaire est mal assigné, mettre à la valeur défaut 2 = omnivore
 		if (regime_alimentaire<0 || regime_alimentaire>2) regime_alimentaire = 2;
-	}
-	
-	public Poisson(String o, String a, String s, String suivi, String espece_nom, int espece_vie)
-	{
-		super(o, a, s, suivi, espece_nom, espece_vie);
-		this.regime_alimentaire=0;
 	}
 	
 	public String displayRegime()

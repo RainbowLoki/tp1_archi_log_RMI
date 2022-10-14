@@ -9,5 +9,6 @@ public interface CabinetRemote extends Remote
 	void addAnimal(Animal toAdd) throws RemoteException;
 	void addAnimal(String o, String a, String s, String suivi, String espece_nom, int espece_vie) throws RemoteException;
 	String to_String() throws RemoteException;
+	int countBeasts() throws RemoteException;
 
 }

@@ -1,5 +1,6 @@
 package commons;
 import java.rmi.server.UnicastRemoteObject;
+import java.io.Serializable;
 import java.rmi.RemoteException;
 
 public class Animal {
@@ -10,6 +11,16 @@ public class Animal {
 	protected DossierSuivi dos;
 	protected espece info_espece;
 
+	public Animal() //Default constructor
+	{
+		owner_name = "Test Owner";
+		animal_name = "Test Animal";
+		species= "Test Species";
+		dos = new DossierSuivi("RAS");
+		info_espece = new espece("TESTIFICATE", 10);
+	}
+	
+	
 	public Animal(String o, String a, String s, String suivi, String espece_nom, int espece_vie)
 	{
 		owner_name=o;

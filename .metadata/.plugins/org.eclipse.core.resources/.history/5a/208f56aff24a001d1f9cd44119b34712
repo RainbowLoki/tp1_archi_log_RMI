@@ -19,25 +19,21 @@ public class Serveur
 		/* METHODS */
 		public static void main(String[] args) {
 			
-			
+			//NOTE : les gestionnaires de sécurité sont dépréciés
 			try {
 				//Sécurité serveur : politique de sécurité et création du gestionnaire de sécurité
 				String path = new File("").getAbsolutePath();
 				String securityPath = path + "/src/main/serveur.policy";
-				String codebasePath = path + "/../TP1_architecture_logicielle_CLIENT/codebase/";
+				String codebasePath = path + "/../TP1_architecture_logicielle_CLIENT/bin/";
 				
 				System.out.println(path);
 				System.out.println(securityPath);
 				System.out.println(codebasePath);
 				
-				//NOTE : les gestionnaires de sécurité sont dépréciés
-				System.setProperty("java.security.policy", "file:" + path + "/src/main/serveur.policy");
-				//System.setProperty("java.rmi.server.codebase", "file:" + path + "../TP1_architecture_logicielle_CLIENT/bin/");
 				
-				//Idée Wided
-				//System.setProperty("java.rmi.server.codebase", "file:/home/e20220000319/Documents/Eclipse/ARCHI_LOGICIELLE/TP1/tp1_archi_log_RMI/TP1_architecture_logicielle_CLIENT/codebase/");
-				System.setProperty("java.rmi.server.codebase", "file:" + path + "/../TP1_architecture_logicielle_CLIENT/codebase/");
-				System.setSecurityManager(new SecurityManager());
+				System.setProperty("java.security.policy", "file:" + path + "/src/main/serveur.policy");
+				System.setSecurityManager (new SecurityManager());
+				System.setProperty("java.rmi.server.codebase", "file:" + path + "../TP1_architecture_logicielle_CLIENT/bin/main/");
 				
 					Animal obj = new Animal("Jean", "Félix", "Chat", "DOSSIER TEST 21:34", "Félidé", 15);
 					Cabinet cab_distribue = new Cabinet("Cabinet Dupont de Ligère", "IAD74586#213");

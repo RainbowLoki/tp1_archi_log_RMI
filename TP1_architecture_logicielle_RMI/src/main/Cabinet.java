@@ -26,6 +26,12 @@ public class Cabinet extends UnicastRemoteObject implements CabinetRemote
 		liste_de_patients.add(toAdd);
 	}
 	
+	public int countBeasts()
+	{
+		return liste_de_patients.size();
+	}
+	
+	
 	//Création de l'animal défini par les paramètres spécifiés dans l'appel, puis ajout au cabinet
 	public void addAnimal(String o, String a, String s, String suivi, String espece_nom, int espece_vie)
 	{

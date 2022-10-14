@@ -64,6 +64,7 @@ public class Serveur
 						
 						
 						
+						
 						System.err.println("==Server is ready for client action==");
 					}
 				} 

@@ -31,12 +31,22 @@ public class Client
 	{
 		destinationClinic.addAnimal(beast.getOwner_name(), beast.getAnimal_name(), beast.getSpecies(), beast.getDos().getDossier(), beast.getInfo_espece().getSpecies_name(), beast.getInfo_espece().getAverage_lifespan());
 		int nbPatients = destinationClinic.countBeasts();
+		
+		String alarms=this.alarmTrigger(destinationClinic);
+		if (alarms!="Clear, no alarms") System.err.println(alarms); //If an alarm was triggered, display it
+	}
+	
+	private String alarmTrigger(CabinetRemote cabinet) throws RemoteException //This returns the highest triggered alarm depending on the amount of animals in cabinet
+	{
+		String triggeredAlarm="Clear, no alarms";
 		for (int o=0; o<alarmQueries.size(); o++)
 		{
-			if (triggeredAlarms.get(o)==false && nbPatients>alarmQueries.get(o))
-				System.err.println("NOTIFICATION : Le cabinet comporte actuellement plus de "+alarmQueries.get(o)+" patients.");
-				triggeredAlarms.set(o, true); //Alarm will not be set again
+			if (triggeredAlarms.get(o)==false && cabinet.countBeasts()>alarmQueries.get(o)) 
+				triggeredAlarm="NOTIFICATION : Le cabinet comporte actuellement plus de "+alarmQueries.get(o)+" patients.";
+				triggeredAlarms.set(o, true); //Alarm is set to true and will only be displayed once per Client
 		}
+		
+		return triggeredAlarm;
 	}
 	
 	

@@ -1,7 +1,0 @@
-package codebase_classes;
-
-import commons.Animal;
-
-public class Poisson extends Animal {
-
-}

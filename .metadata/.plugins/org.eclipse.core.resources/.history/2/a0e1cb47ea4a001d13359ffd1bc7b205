@@ -1,5 +1,0 @@
-package codebase_classes;
-
-public class Poisson extends Animal {
-
-}

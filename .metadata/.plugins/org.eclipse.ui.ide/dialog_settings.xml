@@ -6,6 +6,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\AS\Documents\[1]WORK\UM_M1_GL\ARCHITECTURE LOGICIELLE\tp1_archi_log_RMI\TP1_architecture_logicielle_RMI"/>
+			<item value="C:\Users\AS\Documents\[1]WORK\UM_M1_GL\ARCHITECTURE LOGICIELLE\tp1_archi_log_RMI\TP1_architecture_logicielle_COMMONS"/>
+			<item value="C:\Users\AS\Documents\[1]WORK\UM_M1_GL\ARCHITECTURE LOGICIELLE\tp1_archi_log_RMI\TP1_architecture_logicielle_CLIENT"/>
 			<item value="/home/e20220000319/Documents/Eclipse/ARCHI_LOGICIELLE/TP1/tp1_archi_log_RMI"/>
 		</list>
 	</section>

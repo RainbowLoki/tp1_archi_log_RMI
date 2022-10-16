@@ -23,10 +23,6 @@ public class Client
 		alarmQueries.add(6);
 		alarmQueries.add(10);
 		alarmQueries.add(100);
-		alarmQueries.add(500);
-		alarmQueries.add(1000);
-		triggeredAlarms.add(false);
-		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);

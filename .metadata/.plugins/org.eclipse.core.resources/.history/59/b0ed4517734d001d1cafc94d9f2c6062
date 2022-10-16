@@ -15,6 +15,7 @@ public class Client
 	//Alarms
 	private LinkedList<Integer> alarmQueries;
 	private LinkedList<Boolean> triggeredAlarms;
+	private Boolean repeat=true;
 	
 	private Client() 
 	{
@@ -23,10 +24,6 @@ public class Client
 		alarmQueries.add(6);
 		alarmQueries.add(10);
 		alarmQueries.add(100);
-		alarmQueries.add(500);
-		alarmQueries.add(1000);
-		triggeredAlarms.add(false);
-		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
@@ -121,7 +118,7 @@ public class Client
 	
 	public static void CLIClient(Client clientObject, Registry annuaire, CabinetRemote stubCabi) throws RemoteException
 	{
-		Boolean repeat=true;
+		repeat=true;
 		
 		System.out.println("[CLIENT] Bienvenue dans l'interface client.");
 		System.out.println("[CLIENT] Vous êtes bien connecté au cabinet suivant : "+stubCabi.getCabinet_name()+", ID: "+stubCabi.getCabinet_id());

@@ -28,8 +28,6 @@ public class Client
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
-		triggeredAlarms.add(false);
-		triggeredAlarms.add(false);
 	}
 	
 	private void addNewAnimal(CabinetRemote destinationClinic, Animal beast) throws RemoteException

@@ -128,10 +128,8 @@ public class Client
 		
 		while (repeat)
 		{
-			//Check for alarms
-			String alarms=clientObject.alarmTrigger(stubCabi);
+			String alarms=this.alarmTrigger(destinationClinic);
 			if (alarms!="Clear, no alarms") System.err.println(alarms); //If an alarm was triggered, display it
-			
 			System.out.println("[CLIENT] Que puis-je faire pour vous?");
 			System.out.println("  (1) Ajouter un animal au Cabinet");
 			System.out.println("  (2) Ajouter un poisson au Cabinet, classe codebase");

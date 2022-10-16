@@ -100,8 +100,6 @@ public class Client
 				//Tests Codebase Poisson
 				//Animal test1 = new Poisson();
 				
-				CLIClient(JavaClient, registry, stub_cabinet);
-				
 			} 
 		catch (RemoteException | NotBoundException e) 
 			{
@@ -109,9 +107,8 @@ public class Client
 			}
 	}
 	
-	public static void CLIClient(Client clientObject, Registry annuaire, CabinetRemote stubCabi) throws RemoteException
+	public void CLIClient(Client clientObject,)
 	{
-		System.out.println("[CLIENT] Bienvenue dans l'interface client.");
-		System.out.println("[CLIENT] Vous êtes bien connecté au cabinet suivant : "+stubCabi.getCabinet_name()+", ID: "+stubCabi.getCabinet_id());
+		System.out.println();
 	}
 }

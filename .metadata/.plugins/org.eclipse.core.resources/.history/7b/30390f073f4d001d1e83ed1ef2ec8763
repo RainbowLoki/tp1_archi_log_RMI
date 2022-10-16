@@ -26,14 +26,6 @@ public class Cabinet extends UnicastRemoteObject implements CabinetRemote
 		liste_de_patients.add(toAdd);
 	}
 	
-	public String getCabinet_name() {
-		return cabinet_name;
-	}
-
-	public String getCabinet_id() {
-		return cabinet_id;
-	}
-
 	public int countBeasts()
 	{
 		return liste_de_patients.size();

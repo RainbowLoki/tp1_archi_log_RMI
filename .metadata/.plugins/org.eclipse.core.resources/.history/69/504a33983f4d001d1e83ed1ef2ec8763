@@ -112,6 +112,6 @@ public class Client
 	public static void CLIClient(Client clientObject, Registry annuaire, CabinetRemote stubCabi) throws RemoteException
 	{
 		System.out.println("[CLIENT] Bienvenue dans l'interface client.");
-		System.out.println("[CLIENT] Vous êtes bien connecté au cabinet suivant : "+stubCabi.getCabinet_name()+", ID: "+stubCabi.getCabinet_id());
+		System.out.println("[CLIENT] Vous êtes bien connecté au cabinet"+stubCabi.getCabinet_name()+", ID: "+stubCabi.getCabinet_id());
 	}
 }

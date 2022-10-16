@@ -11,6 +11,6 @@ public interface CabinetRemote extends Remote
 	String to_String() throws RemoteException;
 	int countBeasts() throws RemoteException;
 	public String getCabinet_name() throws RemoteException;
-	public String getCabinet_id() throws RemoteException;
+	public String getCabinet_id();
 
 }

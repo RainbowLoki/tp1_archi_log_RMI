@@ -47,7 +47,7 @@ public class Client
 			{
 				if (triggeredAlarms.get(i)==false)
 				{
-					returnValue="[ALARM] /!\\ Plus de "+alarmQueries.get(i)+" patients: le cabinet accueille "+cabinet.countBeasts()+" bêtes.";
+					returnValue="[ALARM] /!\ Plus de "+alarmQueries.get(i)+" patients: le cabinet accueille "+cabinet.countBeasts()+" bêtes.";
 					triggeredAlarms.set(i, true);
 				}
 			}

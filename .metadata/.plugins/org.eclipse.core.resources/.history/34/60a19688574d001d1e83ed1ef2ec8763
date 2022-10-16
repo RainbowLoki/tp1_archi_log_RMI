@@ -39,20 +39,18 @@ public class Client
 	
 	private String alarmTrigger(CabinetRemote cabinet) throws RemoteException //This returns the highest triggered alarm depending on the amount of animals in cabinet
 	{
-		String returnValue="Clear, no alarms";
-		
-		for (int i=0; i<alarmQueries.size(); i++)
+		String triggeredAlarm="Clear, no alarms";
+		for (int o=0; o<alarmQueries.size(); o++)
 		{
-			if (cabinet.countBeasts()>alarmQueries.get(i))
-			{
-				if (triggeredAlarms.get(i)==false)
-				{
-					returnValue="[ALARM] /!\\ Plus de "+alarmQueries.get(i)+" patients: le cabinet accueille "+cabinet.countBeasts()+" bêtes.";
-					triggeredAlarms.set(i, true);
-				}
-			}
+			if (triggeredAlarms.get(o)==false && cabinet.countBeasts()>alarmQueries.get(o))
+				System.err.println("NUMBER OF BEASTS "+cabinet.countBeasts());
+				System.err.println("ALARM "+o+"was triggered");
+				System.err.println("ALARM "+alarmQueries.get(o)+" was triggered");
+				triggeredAlarm="NOTIFICATION : Le cabinet comporte actuellement plus de "+alarmQueries.get(o)+" patients.";
+				triggeredAlarms.set(o, true); //Alarm is set to true and will only be displayed once per Client
 		}
-		return returnValue;
+		
+		return triggeredAlarm;
 	}
 	
 	

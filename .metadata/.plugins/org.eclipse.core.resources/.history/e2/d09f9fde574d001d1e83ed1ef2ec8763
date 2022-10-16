@@ -45,14 +45,10 @@ public class Client
 		{
 			if (cabinet.countBeasts()>alarmQueries.get(i))
 			{
-				if (triggeredAlarms.get(i)==false)
-				{
-					returnValue="[ALARM] /!\\ Plus de "+alarmQueries.get(i)+" patients: le cabinet accueille "+cabinet.countBeasts()+" bêtes.";
-					triggeredAlarms.set(i, true);
-				}
+				returnValue=("Alarm "+alarmQueries.get(i)+" triggered because we have "+cabinet.countBeasts()+" beasts.");
 			}
 		}
-		return returnValue;
+		return "Clear, no alarms";
 	}
 	
 	

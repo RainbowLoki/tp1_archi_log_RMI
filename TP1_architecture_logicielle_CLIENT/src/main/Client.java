@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import commons.Animal;
 import commons.CabinetRemote;
@@ -19,8 +20,8 @@ public class Client
 	{
 		alarmQueries = new LinkedList<Integer>();
 		triggeredAlarms = new LinkedList<Boolean>();
-		alarmQueries.add(2);
-		alarmQueries.add(6);
+		alarmQueries.add(5);
+		alarmQueries.add(10);
 		alarmQueries.add(100);
 		triggeredAlarms.add(false);
 		triggeredAlarms.add(false);
@@ -41,7 +42,10 @@ public class Client
 		String triggeredAlarm="Clear, no alarms";
 		for (int o=0; o<alarmQueries.size(); o++)
 		{
-			if (triggeredAlarms.get(o)==false && cabinet.countBeasts()>alarmQueries.get(o)) 
+			if (triggeredAlarms.get(o)==false && cabinet.countBeasts()>alarmQueries.get(o))
+				System.err.println("NUMBER OF BEASTS "+cabinet.countBeasts());
+				System.err.println("ALARM "+o+"was triggered");
+				System.err.println("ALARM "+alarmQueries.get(o)+" was triggered");
 				triggeredAlarm="NOTIFICATION : Le cabinet comporte actuellement plus de "+alarmQueries.get(o)+" patients.";
 				triggeredAlarms.set(o, true); //Alarm is set to true and will only be displayed once per Client
 		}
@@ -111,7 +115,92 @@ public class Client
 	
 	public static void CLIClient(Client clientObject, Registry annuaire, CabinetRemote stubCabi) throws RemoteException
 	{
+		Boolean repeat=true;
+		
 		System.out.println("[CLIENT] Bienvenue dans l'interface client.");
 		System.out.println("[CLIENT] Vous êtes bien connecté au cabinet suivant : "+stubCabi.getCabinet_name()+", ID: "+stubCabi.getCabinet_id());
+		
+		while (repeat)
+		{
+			System.out.println("[CLIENT] Que puis-je faire pour vous?");
+			System.out.println("	1 - Ajouter un animal au Cabinet");
+			System.out.println("	2 - Ajouter un poisson au Cabinet, classe codebase");
+			System.out.println("	3 - Afficher tous les patients du Cabinet");
+			System.out.println("	4 - Retrouver votre animal par nom");
+			System.out.println("	5 - Ajouter 100 animaux (test alarme)");
+			System.out.println("	6 - Terminer la session");
+			
+			Scanner inputTaker= new Scanner(System.in); //The Java Scanner class acts similarly to a C language SCANF
+			System.out.print("[USER] "); String userInput= inputTaker.nextLine();
+			
+			 switch(userInput)
+			 {
+		       case "1": 
+		    	   System.out.println("[CLIENT] Nous allons ajouter l'animal tel que vous nous le décrivez.");
+		           String an, ow, sp; int d;
+		           System.out.println("[CLIENT] Comment l'animal s'appelle-t-il? ");
+		           System.out.print("[USER] ");
+		           an = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Nom du propriétaire? ");
+		           System.out.print("[USER] ");
+		           ow = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Espèce de l'animal? ");
+		           System.out.print("[USER] ");
+		           sp = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Durée de vie de l'animal? ");
+		           System.out.print("[USER] ");
+		           d = inputTaker.nextInt();
+		           clientObject.addNewAnimal(stubCabi, new Animal(ow, an, sp, "RAS", sp, d));
+		           
+		           System.out.println("[CLIENT] "+an+" a bien été ajouté au cabinet.");
+		           break;
+		   
+		       case "2":
+		    	   System.out.println("[CLIENT] Nous allons ajouter le poisson tel que vous nous le décrivez.");
+		           String an1, ow1, sp1; int d1, reg;
+		           System.out.println("[CLIENT] Comment le poisson s'appelle-t-il? ");
+		           System.out.print("[USER] ");
+		           an1 = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Nom du propriétaire? ");
+		           System.out.print("[USER] ");
+		           ow1 = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Espèce du poisson? ");
+		           System.out.print("[USER] ");
+		           sp1 = inputTaker.nextLine();
+		           System.out.println("[CLIENT] Durée de vie du poisson? ");
+		           System.out.print("[USER] ");
+		           d1 = inputTaker.nextInt();
+		           System.out.println("[CLIENT] Régime alimentaire? 0 pour herbivore, 1 pour carnivore, 2 pour omnivore - valeur par défaut. ");
+		           System.out.print("[USER] ");
+		           reg = inputTaker.nextInt();
+		           clientObject.addNewAnimal(stubCabi, new Poisson(ow1, an1, sp1, "RAS", sp1, d1, reg));
+		           
+		           System.out.println("[CLIENT] "+an1+" a bien été ajouté au cabinet.");
+		           break;
+		   
+		       case "3":
+		    	   System.out.println("[CLIENT] ");
+		    	   System.out.print(stubCabi.to_String());
+		           break;
+		       case "4":
+		    	   System.out.println("TO BE ADDED");
+		           break;
+		       case "5":
+		    	   for (int i=0; i<100; i++)
+		    	   {
+		    		   clientObject.addNewAnimal(stubCabi, new Animal("TEST_OWNER", "TEST_ANIMAL", "TEST_SPECIES", "RAS", "TEST_SPECIES", 10));
+		    	   }
+		    	   System.out.println("[CLIENT] 100 patients TEST ont été ajoutés au cabinet.");
+		           break;
+		       case "6":
+		    	   System.out.println("[CLIENT] Merci d'avoir utilisé notre service.");
+		    	   System.err.println("===END OF THE LINE===");
+		    	   repeat=false;
+		           break;
+		       default:
+		    	   System.out.println("[CLIENT] Désolé, je n'ai pas compris. N'entrez pas de valeur autre que 1-5.");
+		           break;
+			 }
+		}
 	}
 }

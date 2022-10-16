@@ -20,7 +20,7 @@ public class Client
 	{
 		alarmQueries = new LinkedList<Integer>();
 		triggeredAlarms = new LinkedList<Boolean>();
-		alarmQueries.add(6);
+		alarmQueries.add(5);
 		alarmQueries.add(10);
 		alarmQueries.add(100);
 		triggeredAlarms.add(false);

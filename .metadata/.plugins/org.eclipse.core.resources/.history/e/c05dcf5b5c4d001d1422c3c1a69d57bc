@@ -20,7 +20,7 @@ public class Client
 	{
 		alarmQueries = new LinkedList<Integer>();
 		triggeredAlarms = new LinkedList<Boolean>();
-		alarmQueries.add(6);
+		alarmQueries.add(5);
 		alarmQueries.add(10);
 		alarmQueries.add(100);
 		triggeredAlarms.add(false);
@@ -87,21 +87,21 @@ public class Client
 				CabinetRemote stub_cabinet = (CabinetRemote) registry.lookup("Cabinet");
 				
 				//Cabinet testing
-				//System.out.println("==Test insertion de \"Scoobydoo\" dans cabinet==");
+				System.out.println("==Test insertion de \"Scoobydoo\" dans cabinet==");
 				
 				JavaClient.addNewAnimal(stub_cabinet, new Animal("Shaggy", "Scoobydoo", "Chien", "RAS", "Chien", 20));
-				//System.out.print(stub_cabinet.to_String()); //Affichage du cabinet
+				System.out.print(stub_cabinet.to_String()); //Affichage du cabinet
 				
 				//Insertion Poiscaille
 				
 				Animal fish = new Poisson("Krusty", "Nemo", "Poisson", "RAS", "Poisson Clown", 1, 0);
-				//System.out.println("==Test insertion de Poisson dans cabinet==");
-				//System.out.println(fish.to_String());
+				System.out.println("==Test insertion de Poisson dans cabinet==");
+				System.out.println(fish.to_String());
 
 				JavaClient.addNewAnimal(stub_cabinet, fish);
 				
 				
-				//System.out.print(stub_cabinet.to_String());
+				System.out.print(stub_cabinet.to_String());
 				
 				//Tests Codebase Poisson
 				//Animal test1 = new Poisson();
@@ -203,7 +203,7 @@ public class Client
 		    	   repeat=false;
 		           break;
 		       default:
-		    	   System.out.println("[CLIENT] Désolé, je n'ai pas compris. Je ne suis pas devin : parlez-ma langue! (Chiffres de 1 à 6)");
+		    	   System.out.println("[CLIENT] Désolé, je n'ai pas compris. N'entrez pas de valeur autre que 1-5.");
 		           break;
 			 }
 		}

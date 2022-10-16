@@ -43,7 +43,7 @@ public class Serveur
 					Cabinet cab_distribue = new Cabinet("Cabinet Dupont de Ligère", "IAD74586#213");
 					
 					
-					System.out.println("Test modification de dossier de suivi : ");
+					System.out.println("Test modification de dossier de suivi :")
 					obj.getDos().setDossier("22:22");
 					Registry registry = LocateRegistry.createRegistry(1099);
 					if (registry == null)
@@ -61,13 +61,12 @@ public class Serveur
 						cab_distribue.addAnimal(new Animal("Elizabeth", "Puppers", "Corgi", "RAS", "Chien", 12));
 						cab_distribue.addAnimal(new Animal("Donny", "Crack", "Berger Allemand", "RAS", "Chien", 15));
 						cab_distribue.addAnimal(new Animal("Xavier", "Croquette", "Chat persan", "RAS", "Chat", 20));
-						System.out.println("Initialisation du cabinet terminée, nombre de patients  : "+cab_distribue.liste_de_patients.size());
+						System.out.println("Nombre de patients : "+cab_distribue.liste_de_patients.size());
 						
 						
 						
 						
-						System.err.println("[SERVER] Ready for client action, run Client.class to interact with the server data.");
-						System.err.println("[SERVER] You may run multiple clients on the same cabinet.");
+						System.err.println("==Server is ready for client action==");
 					}
 				} 
 			catch (RemoteException | AlreadyBoundException e) {

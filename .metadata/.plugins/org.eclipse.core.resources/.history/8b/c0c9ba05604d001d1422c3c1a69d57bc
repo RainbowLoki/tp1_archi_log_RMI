@@ -67,7 +67,6 @@ public class Serveur
 						
 						
 						System.err.println("[SERVER] Ready for client action, run Client.class to interact with the server data.");
-						System.err.println("[SERVER] You may run multiple clients on the same cabinet.");
 					}
 				} 
 			catch (RemoteException | AlreadyBoundException e) {

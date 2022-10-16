@@ -1,4 +1,4 @@
-all: compile
+all: comp
 
 comp:
 	javac -d TP1_architecture_logicielle_COMMONS/bin -cp TP1_architecture_logicielle_COMMONS/bin/commons TP1_architecture_logicielle_COMMONS/src/commons/*.java

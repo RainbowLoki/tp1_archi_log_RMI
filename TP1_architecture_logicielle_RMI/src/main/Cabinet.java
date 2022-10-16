@@ -63,4 +63,30 @@ public class Cabinet extends UnicastRemoteObject implements CabinetRemote
 		return result;
 	}
 	
+	public String getPatient(String name)
+	{
+		System.err.println("CLIENT is requesting a search for "+name);
+		String result="";
+		for (int i=0; i<liste_de_patients.size(); i++)
+		{
+			try {
+				String actuel;
+				actuel = liste_de_patients.get(i).getAnimal_name();
+				if (name.equals(actuel))
+				{
+					result = result+"Trouvé à l'indice "+i+" - "+liste_de_patients.get(i).to_String()+"\n";
+					System.out.println("	Match found at rank "+i);
+				}
+				else
+				{
+					System.err.println("	"+liste_de_patients.get(i).getAnimal_name()+" does not match "+name);
+				}
+			} catch (RemoteException e) {
+				//Do nothing lol
+			}
+		}
+		if (result=="") return "ANIMAL NON RÉPERTORIÉ";
+		return result;
+	}
+	
 }

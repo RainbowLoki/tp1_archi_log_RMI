@@ -4,4 +4,5 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="commons.Animal"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

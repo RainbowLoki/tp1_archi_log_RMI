@@ -185,7 +185,10 @@ public class Client
 		    	   System.out.print(stubCabi.to_String());
 		           break;
 		       case "4":
-		    	   System.out.println("TO BE ADDED");
+		    	   System.out.println("[CLIENT] Veuillez entrer le nom de l'animal que vous recherchez.");
+		    	   System.out.print("[USER] ");
+		           String name = inputTaker.nextLine();
+		           System.out.print("[CLIENT] Résultat de la recherche : "+stubCabi.getPatient(name));
 		           break;
 		       case "5":
 		    	   for (int i=0; i<100; i++)

@@ -5,6 +5,8 @@ Réalisé par :	Arthur SAPIN
 
 Vous trouverez dans l'archive courante le diagramme UML sous forme de fichier .png et le compte rendu sous forme de fichier HTML.
 
+Lien du dépôt GitHub : https://github.com/RainbowLoki/tp1_archi_log_RMI
+
 
 Déploiement :
 - Le projet peut être compilé et lancé à l'aide du fichier Makefile du répertoire courant.
